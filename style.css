@@ -1,0 +1,80 @@
+
+/* General body styling */
+body {
+    font-family: 'Sofia';font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #19a1e0; /* Light purple background */
+}
+
+/* Header styling */
+header {
+    background: #18b0ec; /* Dark purple background */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main section styling */
+section {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+/* Gallery styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.gallery figure {
+    margin: 0;
+    max-width: 300px;
+    flex: 1 1 auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Contact info styling */
+.contact-info a {
+    color: #6a0dad; /* Dark purple for links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

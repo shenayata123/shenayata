@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shena's Online Bookstore - Add to Cart</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        h1 {
+            background-color: Violet;
+            color: white;
+            padding: 10px;
+        }
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .book-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .book-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .book-item h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .book-item p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .book-item button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .book-item button:hover {
+            background-color: #0056b3;
+        }
+        #cart {
+            margin-top: 20px;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item button {
+            background-color: #dc3545;
+        }
+        .cart-item button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">BACK</a>
+        </nav>
+        <h1>Shena's Online Bookstore</h1>
+        <nav>
+            <ul> 
+                <li><a href="#add-to-cart">Add to Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="add-to-cart">
+            <h1>Add to Cart</h1>
+            <div class="book-list">
+                <div class="book-item" data-id="1" data-title="Book Title 1" data-author="Author Name 1" data-price="19.99">
+                    <img src="images/book1.jpg" alt="Book Title 1">
+                    <h2>Book Title 1</h2>
+                    <p>Author: Author Name 1</p>
+                    <p>Price: $19.99</p>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="book-item" data-id="2" data-title="Book Title 2" data-author="Author Name 2" data-price="29.99">
+                    <img src="images/book2.jpg" alt="Book Title 2">
+                    <h2>Book Title 2</h2>
+                    <p>Author: Author Name 2</p>
+                    <p>Price: $29.99</p>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="book-item" data-id="3" data-title="Book Title 3" data-author="Author Name 3" data-price="15.99">
+                    <img src="images/book3.jpg" alt="Book Title 3">
+                    <h2>Book Title 3</h2>
+                    <p>Author: Author Name 3</p>
+                    <p>Price: $15.99</p>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div

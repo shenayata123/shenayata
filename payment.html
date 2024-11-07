@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shena's Online Bookstore - Payment</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        h1 {
+            background-color: Violet;
+            color: white;
+            padding: 10px;
+        }
+        .cart-summary, .payment-form {
+            margin-top: 20px;
+        }
+        .cart-summary h2, .payment-form h2 {
+            margin-top: 0;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .payment-form input, .payment-form select, .payment-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .payment-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .payment-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">BACK</a>
+        </nav>
+        <h1>Shena's Online Bookstore</h1>
+    </header>
+    
+    <main>
+        <section id="payment">
+            <h1>Payment</h1>
+
+            <div class="cart-summary">
+                <h2>Your Cart</h2>
+                <div id="cart-items">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+            </div>
+
+            <div class="payment-form">
+                <h2>Payment Details</h2>
+                <form id="payment-form">
+                    <label for="name">Name on Card:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+
+                    <label for="expiry-date">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiry-date" name="expiry-date" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+
+                    <label for="billing-address">Billing Address:</label>
+                    <input type="text" id="billing-address" name="billing-address" required>
+
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+ 
+
+    <script>
+        // Example cart items and total for demonstration
+        const cart = [
+            { id: '1', title: 'Book Title 1', price: 19.99 },
+            { id: '2', title: 'Book Title 2', price: 29.99 }
+        ];
+
+        function displayCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            let total = 0;
+
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartTotalElement.textContent = '0.00';
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <p>Price: $${item.price.toFixed(2)}</p>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+                total += item.price;
+            });
+
+            cartTotalElement.textContent = total.toFixed(2);
+        }
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+            const billingAddress = document.getElementById('billing-address').value;
+            
+            // Example alert to simulate form submission
+            alert(`Payment submitted!
+            Name: ${name}
+            Card Number: ${cardNumber}
+            Expiry Date: ${expiryDate}
+            CVV: ${cvv}
+            Billing Address: ${billingAddress}`);
+            
+            // Here you would normally handle the payment processing.
+            // For example, you might send the form data to your server with an AJAX request.
+        });
+
+        // Initialize the cart display on page load
+        displayCart();
+    </script>
+</body>
+</html>
